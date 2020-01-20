@@ -1,4 +1,4 @@
-# superstore
+# Vue Ecommerce Site with Bootstrap 4
 
 > A Vue.js project
 
