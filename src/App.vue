@@ -57,10 +57,25 @@
         </form>
       </div>
     </nav>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-sm-9">Hello</div>
-        <div class="col-sm-3">Cart</div>
+        <div class="col-sm-9">
+          <div class="card" style="width: 18rem;">
+            <img src="https://dummyimage.com/600x400/000/fff" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <ul class="list-group">
+            <li class="list-group-item">Product - Price</li>
+            <li class="list-group-item">Product - Price</li>
+            <li class="list-group-item">Product - Price</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -71,4 +86,7 @@ export default {};
 </script>
 
 <style>
+.container {
+  padding-top: 20px;
+}
 </style>
