@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <div class="container">
+    <div class="container main-container">
       <div class="row">
         <div class="col-sm-9">
-          <invertory :items="items"></invertory>
+          <invertory :items="items" @newItemAdded="addCartItem"></invertory>
         </div>
         <div class="col-sm-3">
-          <cart></cart>
+          <cart :items="cart" @removeCartItem="removeFromCart"></cart>
         </div>
       </div>
     </div>
@@ -27,17 +27,26 @@ export default {
   },
   data() {
     return {
-      items: []
+      items: [],
+      cart: []
     };
   },
   mounted() {
     this.items = data;
+  },
+  methods: {
+    addCartItem(item) {
+      this.cart.push(item);
+    },
+    removeFromCart(index) {
+      this.cart.splice(index, 1);
+    }
   }
 };
 </script>
 
 <style>
-.container {
+.main-container {
   padding-top: 20px;
 }
 </style>

@@ -10,7 +10,7 @@
           </div>
 
           <p class="card-text">{{item.description}}</p>
-          <a href="#" class="btn btn-primary">Add Product</a>
+          <button @click="addToCart(item)" class="btn btn-sm btn-outline-info">Add Product</button>
         </div>
       </div>
     </div>
@@ -19,12 +19,17 @@
 
 <script>
 export default {
-  props: ["items"]
+  props: ["items"],
+  methods: {
+    addToCart(item) {
+      this.$emit("newItemAdded", item);
+    }
+  }
 };
 </script>
 
 <style>
 .card {
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 </style>
