@@ -46,12 +46,13 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form @submit.prevent="search" class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
+            v-model="keyword"
           />
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
@@ -61,7 +62,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      keyword: ""
+    };
+  },
+  methods: {
+    search() {
+      this.$emit("search", this.keyword);
+    }
+  }
+};
 </script>
 
 <style>
